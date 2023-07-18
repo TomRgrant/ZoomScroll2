@@ -52,3 +52,6 @@
     transform: translate(-50%, -50%) translateX(var(--move-x-4)) translateY(var(--move-y-4));
 }
 
+.transition-1s {
+    transition: all 1s;
+}

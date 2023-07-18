@@ -78,22 +78,22 @@ const ZoomScroll = () => {
 
   return (
     <div className="scroll-area" onWheel={frog}>
-      <div className="center slide move-1">
+      <div className="center slide move-1 transition-1s">
         <h1>Div 1</h1>
         <button>Press</button>
       </div>
 
-      <div className="center slide move-2">
+      <div className="center slide move-2 transition-1s">
         <h1>Div 2</h1>
         <button>Press</button>
       </div>
 
-      <div className="center slide move-3">
+      <div className="center slide move-3 transition-1s">
         <h1>Div 3</h1>
         <button>Press</button>
       </div>
 
-      <div className="center slide move-4">
+      <div className="center slide move-4 transition-1s">
         <h1>Div 4</h1>
         <button>Press</button>
       </div>
