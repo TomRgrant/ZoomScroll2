@@ -16,6 +16,7 @@ const ZoomScroll = () => {
     let moveX4 = window.getComputedStyle(document.documentElement).getPropertyValue('--move-x-4');
     let moveY4 = window.getComputedStyle(document.documentElement).getPropertyValue('--move-y-4');
 
+    // Changes ^ into usable int
     let newMoveX1 = parseInt(moveX1);
     let newMoveY1 = parseInt(moveY1);
 
@@ -33,7 +34,7 @@ const ZoomScroll = () => {
       newMoveY1 += 20; // Number is for how many pixels to move vertically
       newMoveX1 += 20; // ^ For horizontal
     } else {
-      newMoveY1 -= 20;
+      newMoveY1 -= 20; // Number is for how many pixels to move back on opposite scroll
       newMoveX1 -= 20;
     }
 
@@ -57,21 +58,24 @@ const ZoomScroll = () => {
 
     // Div 4
     if (e.deltaY > 0) {
-        newMoveY4 -= 20;
-        newMoveX4 += 20;
+        newMoveY4 -= 40;
+        newMoveX4 += 18;
       } else {
-        newMoveY4 += 20;
-        newMoveX4 -= 20;
+        newMoveY4 += 40;
+        newMoveX4 -= 18;
       }
 
 
     // Update the CSS variables for both X and Y movements
     document.documentElement.style.setProperty('--move-x-1', `${newMoveX1}px`);
     document.documentElement.style.setProperty('--move-y-1', `${newMoveY1}px`);
+
     document.documentElement.style.setProperty('--move-x-2', `${newMoveX2}px`);
     document.documentElement.style.setProperty('--move-y-2', `${newMoveY2}px`);
+
     document.documentElement.style.setProperty('--move-x-3', `${newMoveX3}px`);
     document.documentElement.style.setProperty('--move-y-3', `${newMoveY3}px`);
+
     document.documentElement.style.setProperty('--move-x-4', `${newMoveX4}px`);
     document.documentElement.style.setProperty('--move-y-4', `${newMoveY4}px`);
   };
@@ -80,22 +84,18 @@ const ZoomScroll = () => {
     <div className="scroll-area" onWheel={frog}>
       <div className="center slide move-1 transition-1s">
         <h1>Div 1</h1>
-        <button>Press</button>
       </div>
 
       <div className="center slide move-2 transition-1s">
         <h1>Div 2</h1>
-        <button>Press</button>
       </div>
 
       <div className="center slide move-3 transition-1s">
         <h1>Div 3</h1>
-        <button>Press</button>
       </div>
 
       <div className="center slide move-4 transition-1s">
         <h1>Div 4</h1>
-        <button>Press</button>
       </div>
     </div>
   );
