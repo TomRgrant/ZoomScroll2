@@ -22,6 +22,14 @@ const ZoomScroll = () => {
       newMoveX1 -= 20;
     }
 
+    if (e.deltaY > 0) {
+        newMoveY2 -= 20;
+        newMoveX2 -= 20;
+      } else {
+        newMoveY2 += 20;
+        newMoveX2 += 20;
+      }
+
     // Update the CSS variables for both X and Y movements
     document.documentElement.style.setProperty('--move-x-1', `${newMoveX1}px`);
     document.documentElement.style.setProperty('--move-y-1', `${newMoveY1}px`);
