@@ -1,0 +1,16 @@
+:root {
+    --move: 0;
+}
+
+.center {
+    top: -50px;
+    bottom: -50%;
+    background-color: rgba(255, 166, 0, 0.531);
+    width: 10rem;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(var(--move));
+}
