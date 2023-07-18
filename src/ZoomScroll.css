@@ -3,6 +3,10 @@
     --move-y-1: 0;
     --move-x-2: 0;
     --move-y-2: 0;
+    --move-x-3: 0;
+    --move-y-3: 0;
+    --move-x-4: 0;
+    --move-y-4: 0;
   }
   
   .center {
@@ -25,12 +29,26 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateX(var(--move-x-1)) translateY(var(--move-y-1));
-  }
-  
-  .move-2 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) translateX(var(--move-x-2)) translateY(var(--move-y-2));
-    }
-  
+}
+
+.move-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(var(--move-x-2)) translateY(var(--move-y-2));
+}
+
+.move-3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(var(--move-x-3)) translateY(var(--move-y-3));
+}
+
+.move-4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(var(--move-x-4)) translateY(var(--move-y-4));
+}
+
