@@ -1,5 +1,8 @@
 :root {
-    --move: 0;
+    --move-x-1: 0;
+    --move-y-1: 0;
+    --move-x-2: 0;
+    --move-y-2: 0;
   }
   
   .center {
@@ -8,16 +11,26 @@
     height: 10rem;
     padding: 2rem;
     border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateX(var(--move));
   }
-  
+
   .scroll-area {
     height: 100vh;
     width: 100%;
     background-color: rgba(190, 70, 70, 0.612);
     position: relative;
   }
+
+.move-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(var(--move-x-1)) translateY(var(--move-y-1));
+  }
+  
+  .move-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateX(var(--move-x-2)) translateY(var(--move-y-2));
+    }
   
