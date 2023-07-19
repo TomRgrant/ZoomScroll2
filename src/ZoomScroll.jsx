@@ -88,15 +88,26 @@ const ZoomScroll = () => {
         newMoveY4 -= 40;
         newMoveX4 += 18;
 
+        // Scaling functions
         let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-4'));
         scale = scale + 0.1;
         document.documentElement.style.setProperty('--scale-4', parseFloat(scale));
+
+        // Opcaity functions
+        let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-4'));
+        opacity += 0.1;
+        document.documentElement.style.setProperty('--opacity-4', parseFloat(opacity));
+
       } else {
         newMoveY4 += 40;
         newMoveX4 -= 18;
         let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-4'));
         scale = scale - 0.1;
         document.documentElement.style.setProperty('--scale-4', parseFloat(scale));
+
+        let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-4'));
+        opacity -= 0.1;
+        document.documentElement.style.setProperty('--opacity-4', parseFloat(opacity));
       }
 
 
