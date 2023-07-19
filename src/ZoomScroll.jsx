@@ -5,7 +5,7 @@ const ZoomScroll = () => {
 
 
 
-  const frog = (e) => {
+  const zoom = (e) => {
     // Getting css variables
     let moveX1 = window.getComputedStyle(document.documentElement).getPropertyValue('--move-x-1');
     let moveY1 = window.getComputedStyle(document.documentElement).getPropertyValue('--move-y-1');
@@ -182,21 +182,21 @@ const ZoomScroll = () => {
   };
 
   return (
-    <div className="scroll-area" onWheel={frog}>
-      <div className="center slide move-1 transition-1s">
-        <h1>Div 1</h1>
+    <div className="scroll-area" onWheel={zoom}>
+      <div className="center move-1 transition-1s">
+        <img className="div-img" src="https://static.nationalgeographic.co.uk/files/styles/image_3200/public/mountain-range-appenzell-switzerland_0.jpg?w=1190&h=794" alt="" />
       </div>
 
-      <div className="center slide move-2 transition-1s">
-        <h1>Div 2</h1>
+      <div className="center move-2 transition-1s">
+      <img className="div-img" src="https://www.viewbug.com/media/mediafiles/2015/06/02/55442643_medium.jpg" alt="" />
       </div>
 
-      <div className="center slide move-3 transition-1s">
-        <h1>Div 3</h1>
+      <div className="center move-3 transition-1s">
+      <img className="div-img" src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/blogs/18725/images/mM87l2ZsQRSawMLLRlFF_FallLandscape7-.jpg" alt="" />
       </div>
 
-      <div className="center slide move-4 transition-1s">
-        <h1>Div 4</h1>
+      <div className="center move-4 transition-1s">
+      <img className="div-img" src="https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg" alt="" />
       </div>
     </div>
   );
