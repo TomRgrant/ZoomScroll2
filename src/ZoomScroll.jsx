@@ -34,104 +34,109 @@ const ZoomScroll = () => {
 
 
     // Div 1
-    if (e.deltaY > 0) {
-      newMoveY1 += 20; // Number is for how many pixels to move vertically
-      newMoveX1 += 20; // ^ For horizontal
-
-      let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-1'));
-        scale = scale + 0.1;
-        document.documentElement.style.setProperty('--scale-1', parseFloat(scale));
-
-        let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-1'));
-        opacity += 0.1;
-        document.documentElement.style.setProperty('--opacity-1', parseFloat(opacity));
-    } else {
-    if (newMoveX4 > 0){
-      newMoveY1 -= 20; // Number is for how many pixels to move back on opposite scroll
-      newMoveX1 -= 20;
-    }
+    if (parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-2')) >= 1){
+        
+        if (e.deltaY > 0) {
+        newMoveY1 += 13; // Number is for how many pixels to move vertically
+        newMoveX1 += 30; // ^ For horizontal
 
         let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-1'));
-        if ((scale - 0.1) > 1){
-            scale = scale - 0.1;
+            scale = scale + 0.1;
             document.documentElement.style.setProperty('--scale-1', parseFloat(scale));
+
+            let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-1'));
+            opacity += 0.25;
+            document.documentElement.style.setProperty('--opacity-1', parseFloat(opacity));
+        } else {
+        if (newMoveX4 > 0){
+        newMoveY1 -= 13; // Number is for how many pixels to move back on opposite scroll
+        newMoveX1 -= 30;
         }
 
-        let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-1'));
-        if (opacity > 0){
-            opacity -= 0.1;
-            document.documentElement.style.setProperty('--opacity-1', parseFloat(opacity));
-            console.log(opacity);
+            let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-1'));
+            if ((scale - 0.1) > 1){
+                scale = scale - 0.1;
+                document.documentElement.style.setProperty('--scale-1', parseFloat(scale));
+            }
+
+            let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-1'));
+            if (opacity > 0){
+                opacity -= 0.25;
+                document.documentElement.style.setProperty('--opacity-1', parseFloat(opacity));
+            }
         }
     }
 
     // Div 2
-    if (e.deltaY > 0) {
-        newMoveY2 -= 20;
-        newMoveX2 -= 20;
+    if (parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-3')) >= 1){
+            if (e.deltaY > 0) {
+                newMoveY2 -= 13;
+                newMoveX2 -= 30;
 
-        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-2'));
-        scale = scale + 0.1;
-        document.documentElement.style.setProperty('--scale-2', parseFloat(scale));
+                let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-2'));
+                scale = scale + 0.1;
+                document.documentElement.style.setProperty('--scale-2', parseFloat(scale));
 
-        let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-2'));
-        opacity += 0.1;
-        document.documentElement.style.setProperty('--opacity-2', parseFloat(opacity));
-      } else {
-    if (newMoveX4 > 0){
-        newMoveY2 += 20;
-        newMoveX2 += 20
-        };
+                let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-2'));
+                opacity += 0.25;
+                document.documentElement.style.setProperty('--opacity-2', parseFloat(opacity));
+            } else {
+            if (newMoveX4 > 0){
+                newMoveY2 += 13;
+                newMoveX2 += 30;
+                };
 
-        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-2'));
-        if (scale - 0.1 > 1){
-            scale = scale - 0.1;
-            document.documentElement.style.setProperty('--scale-2', parseFloat(scale));
-        }
+                let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-2'));
+                if (scale - 0.1 > 1){
+                    scale = scale - 0.1;
+                    document.documentElement.style.setProperty('--scale-2', parseFloat(scale));
+                }
 
-        let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-2'));
-        if (opacity > 0){
-            opacity -= 0.1;
-            document.documentElement.style.setProperty('--opacity-2', parseFloat(opacity));
-            console.log(opacity);
-        }
-      }
+                let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-2'));
+                if (opacity > 0){
+                    opacity -= 0.25;
+                    document.documentElement.style.setProperty('--opacity-2', parseFloat(opacity));
+                }
+            }
+    }
 
     // Div 3
-    if (e.deltaY > 0) {
-        newMoveY3 += 20;
-        newMoveX3 -= 20;
+    if (parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-4')) >= 1){
+        console.log('jsjsjsjsjsjsjjs',window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-2'));
+        if (e.deltaY > 0) {
+            newMoveY3 += 13;
+            newMoveX3 -= 30;
 
-        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-3'));
-        scale = scale + 0.1;
-        document.documentElement.style.setProperty('--scale-3', parseFloat(scale));
-
-        let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-3'));
-        opacity += 0.1;
-        document.documentElement.style.setProperty('--opacity-3', parseFloat(opacity));
-      } else {
-    if (newMoveX4 > 0){
-        newMoveY3 -= 20;
-        newMoveX3 += 20
-        };
-        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-3'));
-        if (scale - 0.1 > 1){
-            scale = scale - 0.1;
+            let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-3'));
+            scale = scale + 0.1;
             document.documentElement.style.setProperty('--scale-3', parseFloat(scale));
-        }
 
-        let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-3'));
-        if (opacity > 0){
-            opacity -= 0.1;
+            let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-3'));
+            opacity += 0.25;
             document.documentElement.style.setProperty('--opacity-3', parseFloat(opacity));
-            console.log(opacity);
+        } else {
+        if (newMoveX4 > 0){
+            newMoveY3 -= 13;
+            newMoveX3 += 30;
+            };
+            let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-3'));
+            if (scale - 0.1 > 1){
+                scale = scale - 0.1;
+                document.documentElement.style.setProperty('--scale-3', parseFloat(scale));
+            }
+
+            let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-3'));
+            if (opacity > 0){
+                opacity -= 0.25;
+                document.documentElement.style.setProperty('--opacity-3', parseFloat(opacity));
+            }
         }
-      }
+    }
 
     // Div 4
     if (e.deltaY > 0) {
-        newMoveY4 -= 40;
-        newMoveX4 += 18;
+        newMoveY4 -= 13;
+        newMoveX4 += 30;
 
         // Scaling functions
         let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-4'));
@@ -140,13 +145,13 @@ const ZoomScroll = () => {
 
         // Opcaity functions
         let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-4'));
-        opacity += 0.1;
+        opacity += 0.25;
         document.documentElement.style.setProperty('--opacity-4', parseFloat(opacity));
 
       } else {
         if (newMoveX4 > 0){
-            newMoveY4 += 40;
-            newMoveX4 -= 18;
+            newMoveY4 += 13;
+            newMoveX4 -= 30;
         }
         let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-4'));
         if (scale - 0.1 > 1){
@@ -156,9 +161,8 @@ const ZoomScroll = () => {
 
         let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-4'));
         if (opacity > 0){
-            opacity -= 0.1;
+            opacity -= 0.25;
             document.documentElement.style.setProperty('--opacity-4', parseFloat(opacity));
-            console.log(opacity);
         }
       }
 
