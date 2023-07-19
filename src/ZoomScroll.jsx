@@ -198,6 +198,9 @@ const ZoomScroll = () => {
       <div className="center move-4 transition-1s">
       <img className="div-img" src="https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg" alt="" />
       </div>
+
+      <h1 className="scroll-text">Scroll Down To View Gallery</h1>
+      <button onClick={window.open}>View Menu Version</button>
     </div>
   );
 };

@@ -33,12 +33,14 @@
     color: #FFFFFF;
     border: 1px solid #D9D9D9;
     filter: drop-shadow(0 20px 10px rgba(66, 63, 63, 0.321));
+    box-shadow: 0 0 1em #ffffff;
 }
 
 .scroll-area {
     height: 100vh;
     width: 100vw;
-    background-color: #3C6E71;
+    background: rgb(60,110,113);
+    background: radial-gradient(circle, rgba(60,110,113,1) 53%, rgba(40,75,99,1) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -87,4 +89,16 @@
     height: 100%;
     width: 100%;
     border-radius: 10px;
+}
+
+.scroll-text {
+    position: absolute;
+    text-shadow:2px 2px #353535 ;
+    font-size: 3.5rem;
+    color: #D9D9D9;
+    font-weight: 400;
+    font-family: palatino;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
 }
