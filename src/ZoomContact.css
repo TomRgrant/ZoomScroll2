@@ -1,17 +1,12 @@
 :root {
     --move-x-1: 0;
     --move-y-1: 0;
-
     --move-x-2: 0;
     --move-y-2: 0;
-
     --move-x-3: 0;
     --move-y-3: 0;
-
     --move-x-4: 0;
     --move-y-4: 0;
-
-    --scale-3: 1;
 }
 
 .center {
@@ -55,7 +50,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateX(var(--move-x-3)) translateY(var(--move-y-3));
-    scale: var(--scale-3); /* On different line because only works in transform with !important ^ */
 }
 
 .move-4 {

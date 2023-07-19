@@ -1,9 +1,13 @@
 import React from "react";
-import "./ZoomScroll.css";
+import "./ZoomContact.css";
 
-const ZoomScroll = () => {
-
-
+const ZoomContact = () => {
+  const divLimits = {
+    div1: { maxX: 120, maxY: 120 },
+    div2: { maxX: 120, maxY: 120 },
+    div3: { maxX: 120, maxY: 120 },
+    div4: { maxX: 120, maxY: 120 },
+  };
 
   const frog = (e) => {
     // Getting css variables
@@ -32,50 +36,64 @@ const ZoomScroll = () => {
     let newMoveX4 = parseInt(moveX4);
     let newMoveY4 = parseInt(moveY4);
 
+    const clamp = (value, min, max) => {
+      return Math.min(Math.max(value, min), max);
+    };
+
+    // Calculate the movement based on scroll direction
+    const deltaY = e.deltaY;
 
     // Div 1
     if (e.deltaY > 0) {
-      newMoveY1 += 20; // Number is for how many pixels to move vertically
-      newMoveX1 += 20; // ^ For horizontal
+      newMoveY1 += 20;
+      newMoveX1 += 20;
     } else {
-      newMoveY1 -= 20; // Number is for how many pixels to move back on opposite scroll
+      newMoveY1 -= 20;
       newMoveX1 -= 20;
     }
+    
+    // Apply limits for Div 1
+    newMoveX1 = clamp(newMoveX1, -divLimits.div1.maxX, divLimits.div1.maxX);
+    newMoveY1 = clamp(newMoveY1, -divLimits.div1.maxY, divLimits.div1.maxY);
 
     // Div 2
     if (e.deltaY > 0) {
-        newMoveY2 -= 20;
-        newMoveX2 -= 20;
-      } else {
-        newMoveY2 += 20;
-        newMoveX2 += 20;
-      }
+      newMoveY2 -= 20;
+      newMoveX2 -= 20;
+    } else {
+      newMoveY2 += 20;
+      newMoveX2 += 20;
+    }
+
+    // Apply limits for Div 2
+    newMoveX2 = clamp(newMoveX2, -divLimits.div2.maxX, divLimits.div2.maxX);
+    newMoveY2 = clamp(newMoveY2, -divLimits.div2.maxY, divLimits.div2.maxY);
 
     // Div 3
     if (e.deltaY > 0) {
-        newMoveY3 += 20;
-        newMoveX3 -= 20;
+      newMoveY3 += 20;
+      newMoveX3 -= 20;
+    } else {
+      newMoveY3 -= 20;
+      newMoveX3 += 20;
+    }
 
-        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-3'));
-        scale = scale + 0.1;
-        document.documentElement.style.setProperty('--scale-3', parseFloat(scale));
-      } else {
-        newMoveY3 -= 20;
-        newMoveX3 += 20;
-        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-3'));
-        scale = scale - 0.1;
-        document.documentElement.style.setProperty('--scale-3', parseFloat(scale));
-      }
+    // Apply limits for Div 3
+    newMoveX3 = clamp(newMoveX3, -divLimits.div3.maxX, divLimits.div3.maxX);
+    newMoveY3 = clamp(newMoveY3, -divLimits.div3.maxY, divLimits.div3.maxY);
 
     // Div 4
     if (e.deltaY > 0) {
-        newMoveY4 -= 40;
-        newMoveX4 += 18;
-      } else {
-        newMoveY4 += 40;
-        newMoveX4 -= 18;
-      }
+      newMoveY4 -= 20;
+      newMoveX4 += 20;
+    } else {
+      newMoveY4 += 20;
+      newMoveX4 -= 20;
+    }
 
+    // Apply limits for Div 4
+    newMoveX4 = clamp(newMoveX4, -divLimits.div4.maxX, divLimits.div4.maxX);
+    newMoveY4 = clamp(newMoveY4, -divLimits.div4.maxY, divLimits.div4.maxY);
 
     // Update the CSS variables for both X and Y movements
     document.documentElement.style.setProperty('--move-x-1', `${newMoveX1}px`);
@@ -112,4 +130,4 @@ const ZoomScroll = () => {
   );
 };
 
-export default ZoomScroll;
+export default ZoomContact;
