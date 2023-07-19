@@ -37,8 +37,8 @@ const ZoomScroll = () => {
     if (parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-2')) >= 1){
         
         if (e.deltaY > 0) {
-        newMoveY1 += 13; // Number is for how many pixels to move vertically
-        newMoveX1 += 30; // ^ For horizontal
+        newMoveY1 -= 13; // Number is for how many pixels to move vertically
+        newMoveX1 -= 30; // ^ For horizontal
 
         let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-1'));
             scale = scale + 0.1;
@@ -49,8 +49,8 @@ const ZoomScroll = () => {
             document.documentElement.style.setProperty('--opacity-1', parseFloat(opacity));
         } else {
         if (newMoveX4 > 0){
-        newMoveY1 -= 13; // Number is for how many pixels to move back on opposite scroll
-        newMoveX1 -= 30;
+        newMoveY1 += 13; // Number is for how many pixels to move back on opposite scroll
+        newMoveX1 += 30;
         }
 
             let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-1'));
@@ -70,8 +70,8 @@ const ZoomScroll = () => {
     // Div 2
     if (parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-3')) >= 1){
             if (e.deltaY > 0) {
-                newMoveY2 -= 13;
-                newMoveX2 -= 30;
+                newMoveY2 += 13;
+                newMoveX2 += 30;
 
                 let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-2'));
                 scale = scale + 0.1;
@@ -82,8 +82,8 @@ const ZoomScroll = () => {
                 document.documentElement.style.setProperty('--opacity-2', parseFloat(opacity));
             } else {
             if (newMoveX4 > 0){
-                newMoveY2 += 13;
-                newMoveX2 += 30;
+                newMoveY2 -= 13;
+                newMoveX2 -= 30;
                 };
 
                 let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-2'));
