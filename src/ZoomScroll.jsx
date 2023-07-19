@@ -37,18 +37,34 @@ const ZoomScroll = () => {
     if (e.deltaY > 0) {
       newMoveY1 += 20; // Number is for how many pixels to move vertically
       newMoveX1 += 20; // ^ For horizontal
+
+      let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-1'));
+        scale = scale + 0.1;
+        document.documentElement.style.setProperty('--scale-1', parseFloat(scale));
     } else {
       newMoveY1 -= 20; // Number is for how many pixels to move back on opposite scroll
       newMoveX1 -= 20;
+
+        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-1'));
+        scale = scale - 0.1;
+        document.documentElement.style.setProperty('--scale-1', parseFloat(scale));
     }
 
     // Div 2
     if (e.deltaY > 0) {
         newMoveY2 -= 20;
         newMoveX2 -= 20;
+
+        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-2'));
+        scale = scale + 0.1;
+        document.documentElement.style.setProperty('--scale-2', parseFloat(scale));
       } else {
         newMoveY2 += 20;
         newMoveX2 += 20;
+
+        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-2'));
+        scale = scale - 0.1;
+        document.documentElement.style.setProperty('--scale-2', parseFloat(scale));
       }
 
     // Div 3
@@ -71,9 +87,16 @@ const ZoomScroll = () => {
     if (e.deltaY > 0) {
         newMoveY4 -= 40;
         newMoveX4 += 18;
+
+        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-4'));
+        scale = scale + 0.1;
+        document.documentElement.style.setProperty('--scale-4', parseFloat(scale));
       } else {
         newMoveY4 += 40;
         newMoveX4 -= 18;
+        let scale = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--scale-4'));
+        scale = scale - 0.1;
+        document.documentElement.style.setProperty('--scale-4', parseFloat(scale));
       }
 
 
