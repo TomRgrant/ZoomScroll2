@@ -16,6 +16,9 @@
     --scale-3: 1;
     --scale-4: 1;
 
+    --opacity-1: 0;
+    --opacity-2: 0;
+    --opacity-3: 0;
     --opacity-4: 0;
 }
 
@@ -47,6 +50,7 @@
     left: 50%;
     transform: translate(-50%, -50%) translateX(var(--move-x-1)) translateY(var(--move-y-1));
     scale: var(--scale-1);
+    opacity: var(--opacity-1);
 }
 
 .move-2 {
@@ -55,6 +59,7 @@
     left: 50%;
     transform: translate(-50%, -50%) translateX(var(--move-x-2)) translateY(var(--move-y-2));
     scale: var(--scale-2);
+    opacity: var(--opacity-2);
 }
 
 .move-3 {
@@ -63,6 +68,7 @@
     left: 50%;
     transform: translate(-50%, -50%) translateX(var(--move-x-3)) translateY(var(--move-y-3));
     scale: var(--scale-3); /* On different line because only works in transform with !important ^ */
+    opacity: var(--opacity-3);
 }
 
 .move-4 {
