@@ -102,7 +102,6 @@ const ZoomScroll = () => {
 
     // Div 3
     if (parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-4')) >= 1){
-        console.log('jsjsjsjsjsjsjjs',window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-2'));
         if (e.deltaY > 0) {
             newMoveY3 += 13;
             newMoveX3 -= 30;
@@ -114,6 +113,7 @@ const ZoomScroll = () => {
             let opacity = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--opacity-3'));
             opacity += 0.25;
             document.documentElement.style.setProperty('--opacity-3', parseFloat(opacity));
+            console.log('afafs', opacity);
         } else {
         if (newMoveX4 > 0){
             newMoveY3 -= 13;
