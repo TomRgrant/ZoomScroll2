@@ -200,7 +200,6 @@ const ZoomScroll = () => {
       </div>
 
       <h1 className="scroll-text">Scroll Down To View Gallery</h1>
-      <button onClick={window.open}>View Menu Version</button>
     </div>
   );
 };
